@@ -2,12 +2,19 @@
 
 <html>
 
-    <head>
-        <title> Angular Jeopardy</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-        <script src="app.js"></script>
-    </head>
-    <body ng-app="JeopardyApp">
-        <section ng-controller="MainController">
-            <h1> Jeopardy</h1>
-            
+<head>
+    <title> Angular Jeopardy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="JeopardyApp">
+    <section ng-controller="MainController">
+        <h1> Jeopardy</h1>
+
+        <h3>Question: {{ currentQ }}</h3>
+        <h3>Points: {{ score }}</h3>
+
+
+        <input type="text" id="guessBox" ng-model="guess">
+        <button ng-click="submitGuess()">Guess!</button>
