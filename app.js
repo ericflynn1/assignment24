@@ -33,11 +33,7 @@ app.controller('MainController', function ($scope) {
 
     $scope.submitGuess = function () {
 
-        current++;
 
-        $scope.currentQ = questions[current].question;
-        $scope.currentP = questions[current].points;
-        $scope.currentA = questions[current].answer;
         // $scope.currentS = questions[current].points;
         if ($scope.guess === $scope.currentA) {
             $scope.score = $scope.score + $scope.currentP;
@@ -45,7 +41,10 @@ app.controller('MainController', function ($scope) {
             $scope.score = $scope.score - $scope.currentP;
         }
 
-
+        $scope.currentQ = questions[current].question;
+        $scope.currentP = questions[current].points;
+        $scope.currentA = questions[current].answer;
+        current++;
     }
 
 
